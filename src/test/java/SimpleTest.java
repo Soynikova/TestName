@@ -32,9 +32,13 @@ public class SimpleTest {
        WebElement button = driver.findElement(By.className("passport-Button-Text"));
        button.click();
        driver.get("https://mail.yandex.ru/");
-       Thread.sleep(4000);
+       Thread.sleep(8000);
        WebElement element = driver.findElement(By.xpath("//*[@href='#compose']"));
        element.click();
-       WebElement to = driver.findElement(By.xpath("//@type='hidden']"));
+      Thread.sleep(8000);
+      WebElement to = driver.findElement(By.xpath("//div[@name='to']"));
+      //to.click();
+      to.sendKeys("5684375");
+
 
     }}
