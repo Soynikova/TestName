@@ -35,10 +35,17 @@ public class SimpleTest {
        Thread.sleep(8000);
        WebElement element = driver.findElement(By.xpath("//*[@href='#compose']"));
        element.click();
-      Thread.sleep(8000);
-      WebElement to = driver.findElement(By.xpath("//div[@name='to']"));
-      //to.click();
-      to.sendKeys("5684375");
-
+       Thread.sleep(8000);
+       WebElement to = driver.findElement(By.xpath("//div[@name='to']"));
+       to.sendKeys("ekaterina.soinickova@yandex.ru");
+       Thread.sleep(8000);
+       WebElement subj = driver.findElement(By.xpath("//input[@name='subj']"));
+       subj.sendKeys("autotest");
+       WebElement text = driver.findElement(By.xpath("//textarea[@class='cke_source cke_reset cke_enable_context_menu cke_editable cke_editable_themed cke_contents_ltr']"));
+       text.sendKeys("Привет");
+       WebElement otp = driver.findElement(By.xpath("//button[@class='nb-button _nb-large-action-button _init js-editor-tabfocus-next js-send nb-group-start ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only']"));
+       otp.click();
+       WebElement  check = driver.findElement(By.xpath("//span[@class='_nb-checkbox-flag _nb-checkbox-normal-flag']"));
+       check.click();
 
     }}
