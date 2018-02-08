@@ -2,9 +2,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class SimpleTest {
@@ -20,32 +24,39 @@ public class SimpleTest {
 //    }
 
    @Test
-    public void test() throws Exception{
-       System.setProperty("webdriver.chrome.driver", "C:\\Users\\Tech\\Desktop\\chromedriver_win32\\chromedriver.exe");
-       WebDriver driver = new ChromeDriver();
-       driver.manage().window().maximize();
-       driver.get("https://passport.yandex.ru/");
-       WebElement  login = driver.findElement(By.name("login"));
-       login.sendKeys("ekaterina.soinickova@yandex.ru");
-       WebElement pass =driver.findElement(By.name("passwd"));
-       pass.sendKeys("Soinikova1994");
-       WebElement button = driver.findElement(By.className("passport-Button-Text"));
-       button.click();
-       driver.get("https://mail.yandex.ru/");
-       Thread.sleep(8000);
-       WebElement element = driver.findElement(By.xpath("//*[@href='#compose']"));
-       element.click();
-       Thread.sleep(8000);
-       WebElement to = driver.findElement(By.xpath("//div[@name='to']"));
-       to.sendKeys("ekaterina.soinickova@yandex.ru");
-       Thread.sleep(8000);
-       WebElement subj = driver.findElement(By.xpath("//input[@name='subj']"));
-       subj.sendKeys("autotest");
-       WebElement text = driver.findElement(By.xpath("//textarea[@class='cke_source cke_reset cke_enable_context_menu cke_editable cke_editable_themed cke_contents_ltr']"));
-       text.sendKeys("Привет");
-       WebElement otp = driver.findElement(By.xpath("//button[@class='nb-button _nb-large-action-button _init js-editor-tabfocus-next js-send nb-group-start ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only']"));
-       otp.click();
-       WebElement  check = driver.findElement(By.xpath("//span[@class='_nb-checkbox-flag _nb-checkbox-normal-flag']"));
-       check.click();
+   public void test() throws Exception {
+      System.setProperty("webdriver.chrome.driver", "C:\\Users\\Tech\\Desktop\\chromedriver_win32\\chromedriver.exe");
+      WebDriver driver = new ChromeDriver();
+      driver.manage().window().maximize();
+      driver.get("https://igraprestolov.me/");
+      Select sel = new Select(driver.findElement(By.xpath("//li[@class='menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-622']")));
+      // /sel.selectByVisibleText();
+      sel.selectByVisibleText("1 серия");
 
-    }}
+
+
+//       WebElement  login = driver.findElement(By.name("login"));
+//       login.sendKeys("ekaterina.soinickova@yandex.ru");
+//       WebElement pass =driver.findElement(By.name("passwd"));
+//       pass.sendKeys("Soinikova1994");
+//       WebElement button = driver.findElement(By.className("passport-Button-Text"));
+//       button.click();
+//       driver.get("https://mail.yandex.ru/");
+//       Thread.sleep(8000);
+//       WebElement element = driver.findElement(By.xpath("//*[@href='#compose']"));
+//       element.click();
+//       Thread.sleep(8000);
+//       WebElement to = driver.findElement(By.xpath("//div[@name='to']"));
+//       to.sendKeys("ekaterina.soinickova@yandex.ru");
+//       Thread.sleep(8000);
+//       WebElement subj = driver.findElement(By.xpath("//input[@name='subj']"));
+//       subj.sendKeys("autotest");
+//       WebElement text = driver.findElement(By.xpath("//textarea[@class='cke_source cke_reset cke_enable_context_menu cke_editable cke_editable_themed cke_contents_ltr']"));
+//       text.sendKeys("Привет");
+//       WebElement otp = driver.findElement(By.xpath("//button[@class='nb-button _nb-large-action-button _init js-editor-tabfocus-next js-send nb-group-start ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only']"));
+//       otp.click();
+//       WebElement  check = driver.findElement(By.xpath("//span[@class='_nb-checkbox-flag _nb-checkbox-normal-flag']"));
+//       check.click();
+
+   }
+}
