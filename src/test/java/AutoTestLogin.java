@@ -16,7 +16,8 @@ public class AutoTestLogin {
 @Test
     public void  test1() {
     objLogin = new AutoTest(driver);
-    objLogin.login
+    objLogin.setUserName("fhgfd");
+
 
     }
 

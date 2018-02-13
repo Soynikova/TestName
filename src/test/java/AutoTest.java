@@ -14,9 +14,6 @@ public class AutoTest {
     By password = By.name("passwd");
     By login = By.className("passport-Button-Text");
 
-    @FindBy(name = "")
-    public Input
-
 
 
     public AutoTest(WebDriver driver){
