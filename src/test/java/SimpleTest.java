@@ -28,11 +28,15 @@ public class SimpleTest {
       System.setProperty("webdriver.chrome.driver", "C:\\Users\\Tech\\Desktop\\chromedriver_win32\\chromedriver.exe");
       WebDriver driver = new ChromeDriver();
       driver.manage().window().maximize();
-      driver.get("https://igraprestolov.me/");
-      Select sel = new Select(driver.findElement(By.xpath("//li[@class='menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-622']")));
-      // /sel.selectByVisibleText();
-      sel.selectByVisibleText("1 серия");
-
+    //  driver.get("https://igraprestolov.me/");
+//      WebElement kn = driver.findElement(By.id("menu-item-622"));
+//      kn.click();
+//      WebElement sez=driver.findElement(By.id("menu-item-624"));
+//      sez.click();
+       driver.get("https://www.avito.ru/belgorod");
+  Select sel = new Select(driver.findElement(By.id("category")));
+ // /sel.selectByVisibleText();
+ sel.selectByIndex(2);
 
 
 //       WebElement  login = driver.findElement(By.name("login"));
