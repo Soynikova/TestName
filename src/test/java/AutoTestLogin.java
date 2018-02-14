@@ -17,6 +17,8 @@ public class AutoTestLogin {
     public void  test1() {
     objLogin = new AutoTest(driver);
     objLogin.setUserName("fhgfd");
+    objLogin.setPassword("8764");
+    objLogin.clickLogin();
 
 
     }
