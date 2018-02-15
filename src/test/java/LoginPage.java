@@ -3,6 +3,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import ru.yandex.qatools.htmlelements.element.TextInput;
+import ru.yandex.qatools.htmlelements.loader.HtmlElementLoader;
 import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementDecorator;
 
 
@@ -13,16 +14,18 @@ public class LoginPage {
     public WebElement userName;
 
     @FindBy(name="passwd")
-    public TextInput password;
+    public  WebElement password;
 
     @FindBy(className="passport-Button-Text")
-    public WebElement login;
+    public TextInput login;
 
-    public void init(final WebDriver driver) {
-        PageFactory.initElements(new HtmlElementDecorator(driver), this);
-    }
+
     public void setUserName(String strUserName){
         userName.sendKeys(strUserName);
+    }
+
+    public LoginPage(WebDriver driver) {
+        HtmlElementLoader.populatePageObject(this, driver);
     }
 
     //Set password in password textbox
