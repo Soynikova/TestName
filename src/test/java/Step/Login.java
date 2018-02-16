@@ -11,16 +11,16 @@ public class Login {
 
     LoginPage loginPage;
 
-    public Login() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Ekaterina\\Downloads\\chromedriver_win32\\chromedriver.exe");
-        driver = new ChromeDriver();
-        loginPage = new LoginPage(driver);
-    }
+
 
     @И("^Браузер$")
     public void браузер() throws Throwable {
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Ekaterina\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        driver = new ChromeDriver();
+        loginPage = new LoginPage(driver);
 
         driver.manage().window().maximize();
+
         driver.get("https://passport.yandex.ru/");
     }
     @И("^Логин с юзером \"([^\"]*)\" и логином \"([^\"]*)\"$")
