@@ -7,22 +7,24 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Login {
-    WebDriver driver=null;
+    WebDriver driver;
 
     LoginPage loginPage;
 
-//    public Login(WebDriver driver) {
-//        loginPage = new LoginPage(driver);
-//    }
+    public Login() {
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Ekaterina\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        driver = new ChromeDriver();
+        loginPage = new LoginPage(driver);
+    }
+
     @И("^Браузер$")
     public void браузер() throws Throwable {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Tech\\Desktop\\chromedriver_win32\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+
         driver.manage().window().maximize();
         driver.get("https://passport.yandex.ru/");
     }
-    @И("^Логин$")
-    public void логин(String name, String password){
+    @И("^Логин с юзером \"([^\"]*)\" и логином \"([^\"]*)\"$")
+    public void логинСЮзеромИЛогином(String name, String password){
        loginPage.setUserName(name);
        loginPage.setPassword(password);
        loginPage.clickLogin();

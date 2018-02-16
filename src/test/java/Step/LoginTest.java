@@ -11,7 +11,7 @@ public class LoginTest {
 
 
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Tech\\Desktop\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Ekaterina\\Downloads\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         //login= new Login(driver);
         driver.manage().window().maximize();

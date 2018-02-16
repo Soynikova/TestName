@@ -3,6 +3,4 @@
 Функция: Открыть браузер
   Сценарий: Браузер
     Пусть Браузер
-   Пусть Логин
-   | name |  password      |
-   | ramanakumar.sai@gmail.com    | anupama.413 |
+   Пусть Логин с юзером "ffffdfd" и логином "eeeeeeeee"
