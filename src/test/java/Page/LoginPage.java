@@ -1,3 +1,5 @@
+package Page;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,13 +21,14 @@ public class LoginPage {
     @FindBy(className="passport-Button-Text")
     public TextInput login;
 
+    public LoginPage(WebDriver driver) {
+        HtmlElementLoader.populatePageObject(this, driver);
+    }
+
+
 
     public void setUserName(String strUserName){
         userName.sendKeys(strUserName);
-    }
-
-    public LoginPage(WebDriver driver) {
-        HtmlElementLoader.populatePageObject(this, driver);
     }
 
     //Set password in password textbox
