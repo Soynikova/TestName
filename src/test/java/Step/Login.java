@@ -12,7 +12,7 @@ public class Login {
     LoginPage loginPage;
 
     public Login() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Ekaterina\\Downloads\\chromedriver_win32\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Tech\\Desktop\\chromedriver_win32\\chromedriver.exe");
         driver = new ChromeDriver();
         loginPage = new LoginPage(driver);
     }
@@ -25,8 +25,8 @@ public class Login {
     }
     @И("^Логин с юзером \"([^\"]*)\" и логином \"([^\"]*)\"$")
     public void логинСЮзеромИЛогином(String name, String password){
-       loginPage.setUserName(name);
-       loginPage.setPassword(password);
+       loginPage.setValueUserName(name);
+       loginPage.setValuePassword(password);
        loginPage.clickLogin();
 
     }

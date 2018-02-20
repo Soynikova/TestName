@@ -1,5 +1,7 @@
 package Page;
 
+import jdk.nashorn.internal.objects.annotations.Getter;
+import lombok.Data;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,31 +10,26 @@ import ru.yandex.qatools.htmlelements.element.TextInput;
 import ru.yandex.qatools.htmlelements.loader.HtmlElementLoader;
 import ru.yandex.qatools.htmlelements.loader.decorator.HtmlElementDecorator;
 
-
+@lombok.Getter
 public class LoginPage {
 
     @FindBy(name = "login")
-//    public TextInput userName;
-    public WebElement userName;
+    private WebElement userName;
 
     @FindBy(name="passwd")
-    public  WebElement password;
+    private  WebElement password;
 
     @FindBy(className="passport-Button-Text")
-    public TextInput login;
+    private TextInput login;
 
     public LoginPage(WebDriver driver) {
         HtmlElementLoader.populatePageObject(this, driver);
     }
-
-
-
-    public void setUserName(String strUserName){
+    public void setValueUserName(String strUserName){
         userName.sendKeys(strUserName);
     }
-
     //Set password in password textbox
-    public void setPassword(String strPassword){
+    public void setValuePassword(String strPassword){
         password.sendKeys(strPassword);
     }
     //Click on login button
