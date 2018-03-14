@@ -24,8 +24,8 @@ public class Login {
     }
     @И("^Логин с юзером \"([^\"]*)\" и логином \"([^\"]*)\"$")
     public void логинСЮзеромИЛогином(String name, String password){
-       loginPage.setUserName(name);
-       loginPage.setPassword(password);
+       loginPage.setValueUserName(name);
+       loginPage.setValuePassword(password);
        loginPage.clickLogin();
 
     }
