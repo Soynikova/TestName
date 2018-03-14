@@ -20,7 +20,6 @@ public class Login {
         loginPage = new LoginPage(driver);
 
         driver.manage().window().maximize();
-
         driver.get("https://passport.yandex.ru/");
     }
     @И("^Логин с юзером \"([^\"]*)\" и логином \"([^\"]*)\"$")
