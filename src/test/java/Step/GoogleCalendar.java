@@ -17,7 +17,11 @@ public class GoogleCalendar {
     }
     public void getSpecialDay(){
         calendarPage.getSpecialMounth();
-        calendarPage.clickday();
+        calendarPage.clickDay();
+        calendarPage.clickGrid();
+        calendarPage.cliackDateTo();
+        calendarPage.setSelectDateTo();
+
 
     }
 

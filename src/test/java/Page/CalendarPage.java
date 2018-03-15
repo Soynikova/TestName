@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import ru.yandex.qatools.htmlelements.loader.HtmlElementLoader;
@@ -35,6 +36,14 @@ public class CalendarPage {
     @FindBy(xpath = "//div[@id='drawerMiniMonthNavigator']/descendant::span[@data-date='20180509']")
     private WebElement day;
 
+    @FindBy (xpath="//div[@id='YPCqFe']/descendant::div[@class='WJVfWe A3o4Oe']]")
+    private WebElement grid;
+    @FindBy(xpath ="//div[@id='c190']//div[@class='w8UdJc']")
+    private WebElement selectDateTo;
+    @FindBy (xpath="//input[@id='xStTiIn']")
+    private WebElement DateTo;
+
+
     public CalendarPage(WebDriver driver) {
         HtmlElementLoader.populatePageObject(this, driver);
     }
@@ -51,9 +60,18 @@ public class CalendarPage {
             nextTo.click();
         }
     }
-    public  void clickday(){
+    public  void clickDay(){
         day.click();
     }
+    public void clickGrid(){ grid.click();}
+    public  void cliackDateTo(){
+        DateTo.click();
+    }
+    public void setSelectDateTo(){
+        Select select = new Select(selectDateTo);
+        select.deselectByVisibleText("10:00AM");
+    }
+
 
 
 }

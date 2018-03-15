@@ -7,7 +7,7 @@ public class GoogleLogin {
     GoogleLoginPage googleLoginPage;
 
     public GoogleLogin(WebDriver driver) {
-        googleLoginPage=new GoogleLoginPage();
+        googleLoginPage=new GoogleLoginPage(driver);
     }
     public void logIn(String name, String password){
         googleLoginPage.setValueUserName(name);
